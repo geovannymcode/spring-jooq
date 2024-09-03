@@ -1,7 +1,7 @@
 name: 'spring_jooq'
 services:
   ownercar-db:
-    image: postgres:16-alpine
+    image: postgres:15.0-alpine
     container_name: ownercar-db
     environment:
       - POSTGRES_USER=postgres

@@ -41,6 +41,7 @@
 		<dependency>
 			<groupId>org.flywaydb</groupId>
 			<artifactId>flyway-core</artifactId>
+			<version>9.10.2</version>
 		</dependency>
 
 		<dependency>
@@ -68,6 +69,7 @@
 
 	<build>
 		<plugins>
+			<!-- Plugin de Spring Boot -->
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
@@ -80,7 +82,93 @@
 					</excludes>
 				</configuration>
 			</plugin>
+
+			<!-- Plugin para Flyway -->
+			<plugin>
+				<groupId>org.flywaydb</groupId>
+				<artifactId>flyway-maven-plugin</artifactId>
+				<version>7.14.0</version>
+				<executions>
+					<execution>
+						<phase>generate-sources</phase>
+						<goals>
+							<goal>migrate</goal>
+						</goals>
+						<configuration>
+							<url>jdbc:postgresql://localhost:15432/postgres</url>
+							<user>postgres</user>
+							<password>postgres</password>
+							<locations>
+								<location>filesystem:src/main/resources/db/migration</location>
+							</locations>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+
+			<!-- Plugin de generación de código JOOQ -->
+			<plugin>
+				<groupId>org.jooq</groupId>
+				<artifactId>jooq-codegen-maven</artifactId>
+				<version>3.15.0</version>
+				<executions>
+					<execution>
+						<id>generate-jooq-sources</id>
+						<phase>generate-sources</phase>
+						<goals>
+							<goal>generate</goal>
+						</goals>
+						<configuration>
+							<jdbc>
+								<driver>org.postgresql.Driver</driver>
+								<url>jdbc:postgresql://localhost:15432/postgres</url>
+								<user>postgres</user>
+								<password>postgres</password>
+							</jdbc>
+							<generator>
+								<generate>
+									<pojos>true</pojos>
+									<daos>true</daos>
+									<springAnnotations>true</springAnnotations>
+									<pojosEqualsAndHashCode>true</pojosEqualsAndHashCode>
+									<javaTimeTypes>true</javaTimeTypes>
+									<validationAnnotations>false</validationAnnotations>
+								</generate>
+								<database>
+									<inputSchema>public</inputSchema>
+									<includes>.*</includes>
+									<excludes>
+										flyway_schema_history
+									</excludes>
+								</database>
+								<strategy>
+									<matchers>
+										<tables>
+											<table>
+												<pojoClass>
+													<expression>JOOQ_$0</expression>
+													<transform>PASCAL</transform>
+												</pojoClass>
+												<daoClass>
+													<expression>$0_Repository</expression>
+													<transform>PASCAL</transform>
+												</daoClass>
+											</table>
+										</tables>
+									</matchers>
+								</strategy>
+								<target>
+									<clean>true</clean>
+									<packageName>com.geovannycode.jooq.generated</packageName>
+									<directory>src/main/jooq</directory>
+								</target>
+							</generator>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
 		</plugins>
 	</build>
+
 
 </project>
