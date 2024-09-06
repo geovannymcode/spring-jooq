@@ -40,58 +40,58 @@ public class OwnerRepository extends DAOImpl<OwnerRecord, JooqOwner, Long> {
 
     @Override
     public Long getId(JooqOwner object) {
-        return object.getOwnerid();
+        return object.getOwnerId();
     }
 
     /**
-     * Fetch records that have <code>ownerid BETWEEN lowerInclusive AND
+     * Fetch records that have <code>owner_id BETWEEN lowerInclusive AND
      * upperInclusive</code>
      */
-    public List<JooqOwner> fetchRangeOfOwnerid(Long lowerInclusive, Long upperInclusive) {
-        return fetchRange(Owner.OWNER.OWNERID, lowerInclusive, upperInclusive);
+    public List<JooqOwner> fetchRangeOfOwnerId(Long lowerInclusive, Long upperInclusive) {
+        return fetchRange(Owner.OWNER.OWNER_ID, lowerInclusive, upperInclusive);
     }
 
     /**
-     * Fetch records that have <code>ownerid IN (values)</code>
+     * Fetch records that have <code>owner_id IN (values)</code>
      */
-    public List<JooqOwner> fetchByOwnerid(Long... values) {
-        return fetch(Owner.OWNER.OWNERID, values);
+    public List<JooqOwner> fetchByOwnerId(Long... values) {
+        return fetch(Owner.OWNER.OWNER_ID, values);
     }
 
     /**
-     * Fetch a unique record that has <code>ownerid = value</code>
+     * Fetch a unique record that has <code>owner_id = value</code>
      */
-    public JooqOwner fetchOneByOwnerid(Long value) {
-        return fetchOne(Owner.OWNER.OWNERID, value);
+    public JooqOwner fetchOneByOwnerId(Long value) {
+        return fetchOne(Owner.OWNER.OWNER_ID, value);
     }
 
     /**
-     * Fetch records that have <code>firstname BETWEEN lowerInclusive AND
+     * Fetch records that have <code>first_name BETWEEN lowerInclusive AND
      * upperInclusive</code>
      */
-    public List<JooqOwner> fetchRangeOfFirstname(String lowerInclusive, String upperInclusive) {
-        return fetchRange(Owner.OWNER.FIRSTNAME, lowerInclusive, upperInclusive);
+    public List<JooqOwner> fetchRangeOfFirstName(String lowerInclusive, String upperInclusive) {
+        return fetchRange(Owner.OWNER.FIRST_NAME, lowerInclusive, upperInclusive);
     }
 
     /**
-     * Fetch records that have <code>firstname IN (values)</code>
+     * Fetch records that have <code>first_name IN (values)</code>
      */
-    public List<JooqOwner> fetchByFirstname(String... values) {
-        return fetch(Owner.OWNER.FIRSTNAME, values);
+    public List<JooqOwner> fetchByFirstName(String... values) {
+        return fetch(Owner.OWNER.FIRST_NAME, values);
     }
 
     /**
-     * Fetch records that have <code>lastname BETWEEN lowerInclusive AND
+     * Fetch records that have <code>last_name BETWEEN lowerInclusive AND
      * upperInclusive</code>
      */
-    public List<JooqOwner> fetchRangeOfLastname(String lowerInclusive, String upperInclusive) {
-        return fetchRange(Owner.OWNER.LASTNAME, lowerInclusive, upperInclusive);
+    public List<JooqOwner> fetchRangeOfLastName(String lowerInclusive, String upperInclusive) {
+        return fetchRange(Owner.OWNER.LAST_NAME, lowerInclusive, upperInclusive);
     }
 
     /**
-     * Fetch records that have <code>lastname IN (values)</code>
+     * Fetch records that have <code>last_name IN (values)</code>
      */
-    public List<JooqOwner> fetchByLastname(String... values) {
-        return fetch(Owner.OWNER.LASTNAME, values);
+    public List<JooqOwner> fetchByLastName(String... values) {
+        return fetch(Owner.OWNER.LAST_NAME, values);
     }
 }

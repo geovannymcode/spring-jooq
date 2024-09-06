@@ -25,16 +25,16 @@ public class CarRecord extends UpdatableRecordImpl<CarRecord> implements Record8
     private static final long serialVersionUID = 1L;
 
     /**
-     * Setter for <code>public.car.idcar</code>.
+     * Setter for <code>public.car.car_id</code>.
      */
-    public void setIdcar(Long value) {
+    public void setCarId(Long value) {
         set(0, value);
     }
 
     /**
-     * Getter for <code>public.car.idcar</code>.
+     * Getter for <code>public.car.car_id</code>.
      */
-    public Long getIdcar() {
+    public Long getCarId() {
         return (Long) get(0);
     }
 
@@ -81,30 +81,30 @@ public class CarRecord extends UpdatableRecordImpl<CarRecord> implements Record8
     }
 
     /**
-     * Setter for <code>public.car.modelyear</code>.
+     * Setter for <code>public.car.model_year</code>.
      */
-    public void setModelyear(Integer value) {
+    public void setModelYear(Integer value) {
         set(4, value);
     }
 
     /**
-     * Getter for <code>public.car.modelyear</code>.
+     * Getter for <code>public.car.model_year</code>.
      */
-    public Integer getModelyear() {
+    public Integer getModelYear() {
         return (Integer) get(4);
     }
 
     /**
-     * Setter for <code>public.car.registrationnumber</code>.
+     * Setter for <code>public.car.registration_number</code>.
      */
-    public void setRegistrationnumber(String value) {
+    public void setRegistrationNumber(String value) {
         set(5, value);
     }
 
     /**
-     * Getter for <code>public.car.registrationnumber</code>.
+     * Getter for <code>public.car.registration_number</code>.
      */
-    public String getRegistrationnumber() {
+    public String getRegistrationNumber() {
         return (String) get(5);
     }
 
@@ -123,16 +123,16 @@ public class CarRecord extends UpdatableRecordImpl<CarRecord> implements Record8
     }
 
     /**
-     * Setter for <code>public.car.ownerid</code>.
+     * Setter for <code>public.car.owner_id</code>.
      */
-    public void setOwnerid(Long value) {
+    public void setOwnerId(Long value) {
         set(7, value);
     }
 
     /**
-     * Getter for <code>public.car.ownerid</code>.
+     * Getter for <code>public.car.owner_id</code>.
      */
-    public Long getOwnerid() {
+    public Long getOwnerId() {
         return (Long) get(7);
     }
 
@@ -161,7 +161,7 @@ public class CarRecord extends UpdatableRecordImpl<CarRecord> implements Record8
 
     @Override
     public Field<Long> field1() {
-        return Car.CAR.IDCAR;
+        return Car.CAR.CAR_ID;
     }
 
     @Override
@@ -181,12 +181,12 @@ public class CarRecord extends UpdatableRecordImpl<CarRecord> implements Record8
 
     @Override
     public Field<Integer> field5() {
-        return Car.CAR.MODELYEAR;
+        return Car.CAR.MODEL_YEAR;
     }
 
     @Override
     public Field<String> field6() {
-        return Car.CAR.REGISTRATIONNUMBER;
+        return Car.CAR.REGISTRATION_NUMBER;
     }
 
     @Override
@@ -196,12 +196,12 @@ public class CarRecord extends UpdatableRecordImpl<CarRecord> implements Record8
 
     @Override
     public Field<Long> field8() {
-        return Car.CAR.OWNERID;
+        return Car.CAR.OWNER_ID;
     }
 
     @Override
     public Long component1() {
-        return getIdcar();
+        return getCarId();
     }
 
     @Override
@@ -221,12 +221,12 @@ public class CarRecord extends UpdatableRecordImpl<CarRecord> implements Record8
 
     @Override
     public Integer component5() {
-        return getModelyear();
+        return getModelYear();
     }
 
     @Override
     public String component6() {
-        return getRegistrationnumber();
+        return getRegistrationNumber();
     }
 
     @Override
@@ -236,12 +236,12 @@ public class CarRecord extends UpdatableRecordImpl<CarRecord> implements Record8
 
     @Override
     public Long component8() {
-        return getOwnerid();
+        return getOwnerId();
     }
 
     @Override
     public Long value1() {
-        return getIdcar();
+        return getCarId();
     }
 
     @Override
@@ -261,12 +261,12 @@ public class CarRecord extends UpdatableRecordImpl<CarRecord> implements Record8
 
     @Override
     public Integer value5() {
-        return getModelyear();
+        return getModelYear();
     }
 
     @Override
     public String value6() {
-        return getRegistrationnumber();
+        return getRegistrationNumber();
     }
 
     @Override
@@ -276,12 +276,12 @@ public class CarRecord extends UpdatableRecordImpl<CarRecord> implements Record8
 
     @Override
     public Long value8() {
-        return getOwnerid();
+        return getOwnerId();
     }
 
     @Override
     public CarRecord value1(Long value) {
-        setIdcar(value);
+        setCarId(value);
         return this;
     }
 
@@ -305,13 +305,13 @@ public class CarRecord extends UpdatableRecordImpl<CarRecord> implements Record8
 
     @Override
     public CarRecord value5(Integer value) {
-        setModelyear(value);
+        setModelYear(value);
         return this;
     }
 
     @Override
     public CarRecord value6(String value) {
-        setRegistrationnumber(value);
+        setRegistrationNumber(value);
         return this;
     }
 
@@ -323,7 +323,7 @@ public class CarRecord extends UpdatableRecordImpl<CarRecord> implements Record8
 
     @Override
     public CarRecord value8(Long value) {
-        setOwnerid(value);
+        setOwnerId(value);
         return this;
     }
 
@@ -354,17 +354,17 @@ public class CarRecord extends UpdatableRecordImpl<CarRecord> implements Record8
     /**
      * Create a detached, initialised CarRecord
      */
-    public CarRecord(Long idcar, String brand, String color, String model, Integer modelyear, String registrationnumber, BigDecimal price, Long ownerid) {
+    public CarRecord(Long carId, String brand, String color, String model, Integer modelYear, String registrationNumber, BigDecimal price, Long ownerId) {
         super(Car.CAR);
 
-        setIdcar(idcar);
+        setCarId(carId);
         setBrand(brand);
         setColor(color);
         setModel(model);
-        setModelyear(modelyear);
-        setRegistrationnumber(registrationnumber);
+        setModelYear(modelYear);
+        setRegistrationNumber(registrationNumber);
         setPrice(price);
-        setOwnerid(ownerid);
+        setOwnerId(ownerId);
     }
 
     /**
@@ -374,14 +374,14 @@ public class CarRecord extends UpdatableRecordImpl<CarRecord> implements Record8
         super(Car.CAR);
 
         if (value != null) {
-            setIdcar(value.getIdcar());
+            setCarId(value.getCarId());
             setBrand(value.getBrand());
             setColor(value.getColor());
             setModel(value.getModel());
-            setModelyear(value.getModelyear());
-            setRegistrationnumber(value.getRegistrationnumber());
+            setModelYear(value.getModelYear());
+            setRegistrationNumber(value.getRegistrationNumber());
             setPrice(value.getPrice());
-            setOwnerid(value.getOwnerid());
+            setOwnerId(value.getOwnerId());
         }
     }
 }

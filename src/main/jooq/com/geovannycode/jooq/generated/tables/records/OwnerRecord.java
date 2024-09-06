@@ -23,44 +23,44 @@ public class OwnerRecord extends UpdatableRecordImpl<OwnerRecord> implements Rec
     private static final long serialVersionUID = 1L;
 
     /**
-     * Setter for <code>public.owner.ownerid</code>.
+     * Setter for <code>public.owner.owner_id</code>.
      */
-    public void setOwnerid(Long value) {
+    public void setOwnerId(Long value) {
         set(0, value);
     }
 
     /**
-     * Getter for <code>public.owner.ownerid</code>.
+     * Getter for <code>public.owner.owner_id</code>.
      */
-    public Long getOwnerid() {
+    public Long getOwnerId() {
         return (Long) get(0);
     }
 
     /**
-     * Setter for <code>public.owner.firstname</code>.
+     * Setter for <code>public.owner.first_name</code>.
      */
-    public void setFirstname(String value) {
+    public void setFirstName(String value) {
         set(1, value);
     }
 
     /**
-     * Getter for <code>public.owner.firstname</code>.
+     * Getter for <code>public.owner.first_name</code>.
      */
-    public String getFirstname() {
+    public String getFirstName() {
         return (String) get(1);
     }
 
     /**
-     * Setter for <code>public.owner.lastname</code>.
+     * Setter for <code>public.owner.last_name</code>.
      */
-    public void setLastname(String value) {
+    public void setLastName(String value) {
         set(2, value);
     }
 
     /**
-     * Getter for <code>public.owner.lastname</code>.
+     * Getter for <code>public.owner.last_name</code>.
      */
-    public String getLastname() {
+    public String getLastName() {
         return (String) get(2);
     }
 
@@ -89,64 +89,64 @@ public class OwnerRecord extends UpdatableRecordImpl<OwnerRecord> implements Rec
 
     @Override
     public Field<Long> field1() {
-        return Owner.OWNER.OWNERID;
+        return Owner.OWNER.OWNER_ID;
     }
 
     @Override
     public Field<String> field2() {
-        return Owner.OWNER.FIRSTNAME;
+        return Owner.OWNER.FIRST_NAME;
     }
 
     @Override
     public Field<String> field3() {
-        return Owner.OWNER.LASTNAME;
+        return Owner.OWNER.LAST_NAME;
     }
 
     @Override
     public Long component1() {
-        return getOwnerid();
+        return getOwnerId();
     }
 
     @Override
     public String component2() {
-        return getFirstname();
+        return getFirstName();
     }
 
     @Override
     public String component3() {
-        return getLastname();
+        return getLastName();
     }
 
     @Override
     public Long value1() {
-        return getOwnerid();
+        return getOwnerId();
     }
 
     @Override
     public String value2() {
-        return getFirstname();
+        return getFirstName();
     }
 
     @Override
     public String value3() {
-        return getLastname();
+        return getLastName();
     }
 
     @Override
     public OwnerRecord value1(Long value) {
-        setOwnerid(value);
+        setOwnerId(value);
         return this;
     }
 
     @Override
     public OwnerRecord value2(String value) {
-        setFirstname(value);
+        setFirstName(value);
         return this;
     }
 
     @Override
     public OwnerRecord value3(String value) {
-        setLastname(value);
+        setLastName(value);
         return this;
     }
 
@@ -172,12 +172,12 @@ public class OwnerRecord extends UpdatableRecordImpl<OwnerRecord> implements Rec
     /**
      * Create a detached, initialised OwnerRecord
      */
-    public OwnerRecord(Long ownerid, String firstname, String lastname) {
+    public OwnerRecord(Long ownerId, String firstName, String lastName) {
         super(Owner.OWNER);
 
-        setOwnerid(ownerid);
-        setFirstname(firstname);
-        setLastname(lastname);
+        setOwnerId(ownerId);
+        setFirstName(firstName);
+        setLastName(lastName);
     }
 
     /**
@@ -187,9 +187,9 @@ public class OwnerRecord extends UpdatableRecordImpl<OwnerRecord> implements Rec
         super(Owner.OWNER);
 
         if (value != null) {
-            setOwnerid(value.getOwnerid());
-            setFirstname(value.getFirstname());
-            setLastname(value.getLastname());
+            setOwnerId(value.getOwnerId());
+            setFirstName(value.getFirstName());
+            setLastName(value.getLastName());
         }
     }
 }

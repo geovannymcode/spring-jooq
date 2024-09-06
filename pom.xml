@@ -98,6 +98,7 @@
 							<url>jdbc:postgresql://localhost:15432/postgres</url>
 							<user>postgres</user>
 							<password>postgres</password>
+							<baselineOnMigrate>true</baselineOnMigrate>
 							<locations>
 								<location>filesystem:src/main/resources/db/migration</location>
 							</locations>

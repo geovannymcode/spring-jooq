@@ -50,9 +50,9 @@ public class Car extends TableImpl<CarRecord> {
     }
 
     /**
-     * The column <code>public.car.idcar</code>.
+     * The column <code>public.car.car_id</code>.
      */
-    public final TableField<CarRecord, Long> IDCAR = createField(DSL.name("idcar"), SQLDataType.BIGINT.nullable(false).identity(true), this, "");
+    public final TableField<CarRecord, Long> CAR_ID = createField(DSL.name("car_id"), SQLDataType.BIGINT.nullable(false).identity(true), this, "");
 
     /**
      * The column <code>public.car.brand</code>.
@@ -70,14 +70,14 @@ public class Car extends TableImpl<CarRecord> {
     public final TableField<CarRecord, String> MODEL = createField(DSL.name("model"), SQLDataType.VARCHAR(50), this, "");
 
     /**
-     * The column <code>public.car.modelyear</code>.
+     * The column <code>public.car.model_year</code>.
      */
-    public final TableField<CarRecord, Integer> MODELYEAR = createField(DSL.name("modelyear"), SQLDataType.INTEGER, this, "");
+    public final TableField<CarRecord, Integer> MODEL_YEAR = createField(DSL.name("model_year"), SQLDataType.INTEGER, this, "");
 
     /**
-     * The column <code>public.car.registrationnumber</code>.
+     * The column <code>public.car.registration_number</code>.
      */
-    public final TableField<CarRecord, String> REGISTRATIONNUMBER = createField(DSL.name("registrationnumber"), SQLDataType.VARCHAR(20), this, "");
+    public final TableField<CarRecord, String> REGISTRATION_NUMBER = createField(DSL.name("registration_number"), SQLDataType.VARCHAR(20), this, "");
 
     /**
      * The column <code>public.car.price</code>.
@@ -85,9 +85,9 @@ public class Car extends TableImpl<CarRecord> {
     public final TableField<CarRecord, BigDecimal> PRICE = createField(DSL.name("price"), SQLDataType.NUMERIC(10, 2), this, "");
 
     /**
-     * The column <code>public.car.ownerid</code>.
+     * The column <code>public.car.owner_id</code>.
      */
-    public final TableField<CarRecord, Long> OWNERID = createField(DSL.name("ownerid"), SQLDataType.BIGINT, this, "");
+    public final TableField<CarRecord, Long> OWNER_ID = createField(DSL.name("owner_id"), SQLDataType.BIGINT, this, "");
 
     private Car(Name alias, Table<CarRecord> aliased) {
         this(alias, aliased, null);

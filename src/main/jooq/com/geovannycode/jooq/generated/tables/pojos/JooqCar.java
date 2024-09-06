@@ -16,60 +16,60 @@ public class JooqCar implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
-    private Long       idcar;
+    private Long       carId;
     private String     brand;
     private String     color;
     private String     model;
-    private Integer    modelyear;
-    private String     registrationnumber;
+    private Integer    modelYear;
+    private String     registrationNumber;
     private BigDecimal price;
-    private Long       ownerid;
+    private Long       ownerId;
 
     public JooqCar() {}
 
     public JooqCar(JooqCar value) {
-        this.idcar = value.idcar;
+        this.carId = value.carId;
         this.brand = value.brand;
         this.color = value.color;
         this.model = value.model;
-        this.modelyear = value.modelyear;
-        this.registrationnumber = value.registrationnumber;
+        this.modelYear = value.modelYear;
+        this.registrationNumber = value.registrationNumber;
         this.price = value.price;
-        this.ownerid = value.ownerid;
+        this.ownerId = value.ownerId;
     }
 
     public JooqCar(
-        Long       idcar,
+        Long       carId,
         String     brand,
         String     color,
         String     model,
-        Integer    modelyear,
-        String     registrationnumber,
+        Integer    modelYear,
+        String     registrationNumber,
         BigDecimal price,
-        Long       ownerid
+        Long       ownerId
     ) {
-        this.idcar = idcar;
+        this.carId = carId;
         this.brand = brand;
         this.color = color;
         this.model = model;
-        this.modelyear = modelyear;
-        this.registrationnumber = registrationnumber;
+        this.modelYear = modelYear;
+        this.registrationNumber = registrationNumber;
         this.price = price;
-        this.ownerid = ownerid;
+        this.ownerId = ownerId;
     }
 
     /**
-     * Getter for <code>public.car.idcar</code>.
+     * Getter for <code>public.car.car_id</code>.
      */
-    public Long getIdcar() {
-        return this.idcar;
+    public Long getCarId() {
+        return this.carId;
     }
 
     /**
-     * Setter for <code>public.car.idcar</code>.
+     * Setter for <code>public.car.car_id</code>.
      */
-    public void setIdcar(Long idcar) {
-        this.idcar = idcar;
+    public void setCarId(Long carId) {
+        this.carId = carId;
     }
 
     /**
@@ -115,31 +115,31 @@ public class JooqCar implements Serializable {
     }
 
     /**
-     * Getter for <code>public.car.modelyear</code>.
+     * Getter for <code>public.car.model_year</code>.
      */
-    public Integer getModelyear() {
-        return this.modelyear;
+    public Integer getModelYear() {
+        return this.modelYear;
     }
 
     /**
-     * Setter for <code>public.car.modelyear</code>.
+     * Setter for <code>public.car.model_year</code>.
      */
-    public void setModelyear(Integer modelyear) {
-        this.modelyear = modelyear;
+    public void setModelYear(Integer modelYear) {
+        this.modelYear = modelYear;
     }
 
     /**
-     * Getter for <code>public.car.registrationnumber</code>.
+     * Getter for <code>public.car.registration_number</code>.
      */
-    public String getRegistrationnumber() {
-        return this.registrationnumber;
+    public String getRegistrationNumber() {
+        return this.registrationNumber;
     }
 
     /**
-     * Setter for <code>public.car.registrationnumber</code>.
+     * Setter for <code>public.car.registration_number</code>.
      */
-    public void setRegistrationnumber(String registrationnumber) {
-        this.registrationnumber = registrationnumber;
+    public void setRegistrationNumber(String registrationNumber) {
+        this.registrationNumber = registrationNumber;
     }
 
     /**
@@ -157,17 +157,17 @@ public class JooqCar implements Serializable {
     }
 
     /**
-     * Getter for <code>public.car.ownerid</code>.
+     * Getter for <code>public.car.owner_id</code>.
      */
-    public Long getOwnerid() {
-        return this.ownerid;
+    public Long getOwnerId() {
+        return this.ownerId;
     }
 
     /**
-     * Setter for <code>public.car.ownerid</code>.
+     * Setter for <code>public.car.owner_id</code>.
      */
-    public void setOwnerid(Long ownerid) {
-        this.ownerid = ownerid;
+    public void setOwnerId(Long ownerId) {
+        this.ownerId = ownerId;
     }
 
     @Override
@@ -179,11 +179,11 @@ public class JooqCar implements Serializable {
         if (getClass() != obj.getClass())
             return false;
         final JooqCar other = (JooqCar) obj;
-        if (idcar == null) {
-            if (other.idcar != null)
+        if (carId == null) {
+            if (other.carId != null)
                 return false;
         }
-        else if (!idcar.equals(other.idcar))
+        else if (!carId.equals(other.carId))
             return false;
         if (brand == null) {
             if (other.brand != null)
@@ -203,17 +203,17 @@ public class JooqCar implements Serializable {
         }
         else if (!model.equals(other.model))
             return false;
-        if (modelyear == null) {
-            if (other.modelyear != null)
+        if (modelYear == null) {
+            if (other.modelYear != null)
                 return false;
         }
-        else if (!modelyear.equals(other.modelyear))
+        else if (!modelYear.equals(other.modelYear))
             return false;
-        if (registrationnumber == null) {
-            if (other.registrationnumber != null)
+        if (registrationNumber == null) {
+            if (other.registrationNumber != null)
                 return false;
         }
-        else if (!registrationnumber.equals(other.registrationnumber))
+        else if (!registrationNumber.equals(other.registrationNumber))
             return false;
         if (price == null) {
             if (other.price != null)
@@ -221,11 +221,11 @@ public class JooqCar implements Serializable {
         }
         else if (!price.equals(other.price))
             return false;
-        if (ownerid == null) {
-            if (other.ownerid != null)
+        if (ownerId == null) {
+            if (other.ownerId != null)
                 return false;
         }
-        else if (!ownerid.equals(other.ownerid))
+        else if (!ownerId.equals(other.ownerId))
             return false;
         return true;
     }
@@ -234,14 +234,14 @@ public class JooqCar implements Serializable {
     public int hashCode() {
         final int prime = 31;
         int result = 1;
-        result = prime * result + ((this.idcar == null) ? 0 : this.idcar.hashCode());
+        result = prime * result + ((this.carId == null) ? 0 : this.carId.hashCode());
         result = prime * result + ((this.brand == null) ? 0 : this.brand.hashCode());
         result = prime * result + ((this.color == null) ? 0 : this.color.hashCode());
         result = prime * result + ((this.model == null) ? 0 : this.model.hashCode());
-        result = prime * result + ((this.modelyear == null) ? 0 : this.modelyear.hashCode());
-        result = prime * result + ((this.registrationnumber == null) ? 0 : this.registrationnumber.hashCode());
+        result = prime * result + ((this.modelYear == null) ? 0 : this.modelYear.hashCode());
+        result = prime * result + ((this.registrationNumber == null) ? 0 : this.registrationNumber.hashCode());
         result = prime * result + ((this.price == null) ? 0 : this.price.hashCode());
-        result = prime * result + ((this.ownerid == null) ? 0 : this.ownerid.hashCode());
+        result = prime * result + ((this.ownerId == null) ? 0 : this.ownerId.hashCode());
         return result;
     }
 
@@ -249,14 +249,14 @@ public class JooqCar implements Serializable {
     public String toString() {
         StringBuilder sb = new StringBuilder("JooqCar (");
 
-        sb.append(idcar);
+        sb.append(carId);
         sb.append(", ").append(brand);
         sb.append(", ").append(color);
         sb.append(", ").append(model);
-        sb.append(", ").append(modelyear);
-        sb.append(", ").append(registrationnumber);
+        sb.append(", ").append(modelYear);
+        sb.append(", ").append(registrationNumber);
         sb.append(", ").append(price);
-        sb.append(", ").append(ownerid);
+        sb.append(", ").append(ownerId);
 
         sb.append(")");
         return sb.toString();

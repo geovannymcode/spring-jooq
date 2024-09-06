@@ -27,12 +27,12 @@ public class Keys {
     // UNIQUE and PRIMARY KEY definitions
     // -------------------------------------------------------------------------
 
-    public static final UniqueKey<CarRecord> CAR_PKEY = Internal.createUniqueKey(Car.CAR, DSL.name("car_pkey"), new TableField[] { Car.CAR.IDCAR }, true);
-    public static final UniqueKey<OwnerRecord> OWNER_PKEY = Internal.createUniqueKey(Owner.OWNER, DSL.name("owner_pkey"), new TableField[] { Owner.OWNER.OWNERID }, true);
+    public static final UniqueKey<CarRecord> CAR_PKEY = Internal.createUniqueKey(Car.CAR, DSL.name("car_pkey"), new TableField[] { Car.CAR.CAR_ID }, true);
+    public static final UniqueKey<OwnerRecord> OWNER_PKEY = Internal.createUniqueKey(Owner.OWNER, DSL.name("owner_pkey"), new TableField[] { Owner.OWNER.OWNER_ID }, true);
 
     // -------------------------------------------------------------------------
     // FOREIGN KEY definitions
     // -------------------------------------------------------------------------
 
-    public static final ForeignKey<CarRecord, OwnerRecord> CAR__FK_CAR_OWNER = Internal.createForeignKey(Car.CAR, DSL.name("fk_car_owner"), new TableField[] { Car.CAR.OWNERID }, Keys.OWNER_PKEY, new TableField[] { Owner.OWNER.OWNERID }, true);
+    public static final ForeignKey<CarRecord, OwnerRecord> CAR__FK_CAR_OWNER = Internal.createForeignKey(Car.CAR, DSL.name("fk_car_owner"), new TableField[] { Car.CAR.OWNER_ID }, Keys.OWNER_PKEY, new TableField[] { Owner.OWNER.OWNER_ID }, true);
 }

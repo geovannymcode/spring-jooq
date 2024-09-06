@@ -15,68 +15,68 @@ public class JooqOwner implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
-    private Long   ownerid;
-    private String firstname;
-    private String lastname;
+    private Long   ownerId;
+    private String firstName;
+    private String lastName;
 
     public JooqOwner() {}
 
     public JooqOwner(JooqOwner value) {
-        this.ownerid = value.ownerid;
-        this.firstname = value.firstname;
-        this.lastname = value.lastname;
+        this.ownerId = value.ownerId;
+        this.firstName = value.firstName;
+        this.lastName = value.lastName;
     }
 
     public JooqOwner(
-        Long   ownerid,
-        String firstname,
-        String lastname
+        Long   ownerId,
+        String firstName,
+        String lastName
     ) {
-        this.ownerid = ownerid;
-        this.firstname = firstname;
-        this.lastname = lastname;
+        this.ownerId = ownerId;
+        this.firstName = firstName;
+        this.lastName = lastName;
     }
 
     /**
-     * Getter for <code>public.owner.ownerid</code>.
+     * Getter for <code>public.owner.owner_id</code>.
      */
-    public Long getOwnerid() {
-        return this.ownerid;
+    public Long getOwnerId() {
+        return this.ownerId;
     }
 
     /**
-     * Setter for <code>public.owner.ownerid</code>.
+     * Setter for <code>public.owner.owner_id</code>.
      */
-    public void setOwnerid(Long ownerid) {
-        this.ownerid = ownerid;
+    public void setOwnerId(Long ownerId) {
+        this.ownerId = ownerId;
     }
 
     /**
-     * Getter for <code>public.owner.firstname</code>.
+     * Getter for <code>public.owner.first_name</code>.
      */
-    public String getFirstname() {
-        return this.firstname;
+    public String getFirstName() {
+        return this.firstName;
     }
 
     /**
-     * Setter for <code>public.owner.firstname</code>.
+     * Setter for <code>public.owner.first_name</code>.
      */
-    public void setFirstname(String firstname) {
-        this.firstname = firstname;
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
     }
 
     /**
-     * Getter for <code>public.owner.lastname</code>.
+     * Getter for <code>public.owner.last_name</code>.
      */
-    public String getLastname() {
-        return this.lastname;
+    public String getLastName() {
+        return this.lastName;
     }
 
     /**
-     * Setter for <code>public.owner.lastname</code>.
+     * Setter for <code>public.owner.last_name</code>.
      */
-    public void setLastname(String lastname) {
-        this.lastname = lastname;
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
 
     @Override
@@ -88,23 +88,23 @@ public class JooqOwner implements Serializable {
         if (getClass() != obj.getClass())
             return false;
         final JooqOwner other = (JooqOwner) obj;
-        if (ownerid == null) {
-            if (other.ownerid != null)
+        if (ownerId == null) {
+            if (other.ownerId != null)
                 return false;
         }
-        else if (!ownerid.equals(other.ownerid))
+        else if (!ownerId.equals(other.ownerId))
             return false;
-        if (firstname == null) {
-            if (other.firstname != null)
+        if (firstName == null) {
+            if (other.firstName != null)
                 return false;
         }
-        else if (!firstname.equals(other.firstname))
+        else if (!firstName.equals(other.firstName))
             return false;
-        if (lastname == null) {
-            if (other.lastname != null)
+        if (lastName == null) {
+            if (other.lastName != null)
                 return false;
         }
-        else if (!lastname.equals(other.lastname))
+        else if (!lastName.equals(other.lastName))
             return false;
         return true;
     }
@@ -113,9 +113,9 @@ public class JooqOwner implements Serializable {
     public int hashCode() {
         final int prime = 31;
         int result = 1;
-        result = prime * result + ((this.ownerid == null) ? 0 : this.ownerid.hashCode());
-        result = prime * result + ((this.firstname == null) ? 0 : this.firstname.hashCode());
-        result = prime * result + ((this.lastname == null) ? 0 : this.lastname.hashCode());
+        result = prime * result + ((this.ownerId == null) ? 0 : this.ownerId.hashCode());
+        result = prime * result + ((this.firstName == null) ? 0 : this.firstName.hashCode());
+        result = prime * result + ((this.lastName == null) ? 0 : this.lastName.hashCode());
         return result;
     }
 
@@ -123,9 +123,9 @@ public class JooqOwner implements Serializable {
     public String toString() {
         StringBuilder sb = new StringBuilder("JooqOwner (");
 
-        sb.append(ownerid);
-        sb.append(", ").append(firstname);
-        sb.append(", ").append(lastname);
+        sb.append(ownerId);
+        sb.append(", ").append(firstName);
+        sb.append(", ").append(lastName);
 
         sb.append(")");
         return sb.toString();

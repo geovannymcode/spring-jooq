@@ -41,29 +41,29 @@ public class CarRepository extends DAOImpl<CarRecord, JooqCar, Long> {
 
     @Override
     public Long getId(JooqCar object) {
-        return object.getIdcar();
+        return object.getCarId();
     }
 
     /**
-     * Fetch records that have <code>idcar BETWEEN lowerInclusive AND
+     * Fetch records that have <code>car_id BETWEEN lowerInclusive AND
      * upperInclusive</code>
      */
-    public List<JooqCar> fetchRangeOfIdcar(Long lowerInclusive, Long upperInclusive) {
-        return fetchRange(Car.CAR.IDCAR, lowerInclusive, upperInclusive);
+    public List<JooqCar> fetchRangeOfCarId(Long lowerInclusive, Long upperInclusive) {
+        return fetchRange(Car.CAR.CAR_ID, lowerInclusive, upperInclusive);
     }
 
     /**
-     * Fetch records that have <code>idcar IN (values)</code>
+     * Fetch records that have <code>car_id IN (values)</code>
      */
-    public List<JooqCar> fetchByIdcar(Long... values) {
-        return fetch(Car.CAR.IDCAR, values);
+    public List<JooqCar> fetchByCarId(Long... values) {
+        return fetch(Car.CAR.CAR_ID, values);
     }
 
     /**
-     * Fetch a unique record that has <code>idcar = value</code>
+     * Fetch a unique record that has <code>car_id = value</code>
      */
-    public JooqCar fetchOneByIdcar(Long value) {
-        return fetchOne(Car.CAR.IDCAR, value);
+    public JooqCar fetchOneByCarId(Long value) {
+        return fetchOne(Car.CAR.CAR_ID, value);
     }
 
     /**
@@ -112,33 +112,33 @@ public class CarRepository extends DAOImpl<CarRecord, JooqCar, Long> {
     }
 
     /**
-     * Fetch records that have <code>modelyear BETWEEN lowerInclusive AND
+     * Fetch records that have <code>model_year BETWEEN lowerInclusive AND
      * upperInclusive</code>
      */
-    public List<JooqCar> fetchRangeOfModelyear(Integer lowerInclusive, Integer upperInclusive) {
-        return fetchRange(Car.CAR.MODELYEAR, lowerInclusive, upperInclusive);
+    public List<JooqCar> fetchRangeOfModelYear(Integer lowerInclusive, Integer upperInclusive) {
+        return fetchRange(Car.CAR.MODEL_YEAR, lowerInclusive, upperInclusive);
     }
 
     /**
-     * Fetch records that have <code>modelyear IN (values)</code>
+     * Fetch records that have <code>model_year IN (values)</code>
      */
-    public List<JooqCar> fetchByModelyear(Integer... values) {
-        return fetch(Car.CAR.MODELYEAR, values);
+    public List<JooqCar> fetchByModelYear(Integer... values) {
+        return fetch(Car.CAR.MODEL_YEAR, values);
     }
 
     /**
-     * Fetch records that have <code>registrationnumber BETWEEN lowerInclusive
+     * Fetch records that have <code>registration_number BETWEEN lowerInclusive
      * AND upperInclusive</code>
      */
-    public List<JooqCar> fetchRangeOfRegistrationnumber(String lowerInclusive, String upperInclusive) {
-        return fetchRange(Car.CAR.REGISTRATIONNUMBER, lowerInclusive, upperInclusive);
+    public List<JooqCar> fetchRangeOfRegistrationNumber(String lowerInclusive, String upperInclusive) {
+        return fetchRange(Car.CAR.REGISTRATION_NUMBER, lowerInclusive, upperInclusive);
     }
 
     /**
-     * Fetch records that have <code>registrationnumber IN (values)</code>
+     * Fetch records that have <code>registration_number IN (values)</code>
      */
-    public List<JooqCar> fetchByRegistrationnumber(String... values) {
-        return fetch(Car.CAR.REGISTRATIONNUMBER, values);
+    public List<JooqCar> fetchByRegistrationNumber(String... values) {
+        return fetch(Car.CAR.REGISTRATION_NUMBER, values);
     }
 
     /**
@@ -157,17 +157,17 @@ public class CarRepository extends DAOImpl<CarRecord, JooqCar, Long> {
     }
 
     /**
-     * Fetch records that have <code>ownerid BETWEEN lowerInclusive AND
+     * Fetch records that have <code>owner_id BETWEEN lowerInclusive AND
      * upperInclusive</code>
      */
-    public List<JooqCar> fetchRangeOfOwnerid(Long lowerInclusive, Long upperInclusive) {
-        return fetchRange(Car.CAR.OWNERID, lowerInclusive, upperInclusive);
+    public List<JooqCar> fetchRangeOfOwnerId(Long lowerInclusive, Long upperInclusive) {
+        return fetchRange(Car.CAR.OWNER_ID, lowerInclusive, upperInclusive);
     }
 
     /**
-     * Fetch records that have <code>ownerid IN (values)</code>
+     * Fetch records that have <code>owner_id IN (values)</code>
      */
-    public List<JooqCar> fetchByOwnerid(Long... values) {
-        return fetch(Car.CAR.OWNERID, values);
+    public List<JooqCar> fetchByOwnerId(Long... values) {
+        return fetch(Car.CAR.OWNER_ID, values);
     }
 }

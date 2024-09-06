@@ -46,19 +46,19 @@ public class Owner extends TableImpl<OwnerRecord> {
     }
 
     /**
-     * The column <code>public.owner.ownerid</code>.
+     * The column <code>public.owner.owner_id</code>.
      */
-    public final TableField<OwnerRecord, Long> OWNERID = createField(DSL.name("ownerid"), SQLDataType.BIGINT.nullable(false).identity(true), this, "");
+    public final TableField<OwnerRecord, Long> OWNER_ID = createField(DSL.name("owner_id"), SQLDataType.BIGINT.nullable(false).identity(true), this, "");
 
     /**
-     * The column <code>public.owner.firstname</code>.
+     * The column <code>public.owner.first_name</code>.
      */
-    public final TableField<OwnerRecord, String> FIRSTNAME = createField(DSL.name("firstname"), SQLDataType.VARCHAR(50), this, "");
+    public final TableField<OwnerRecord, String> FIRST_NAME = createField(DSL.name("first_name"), SQLDataType.VARCHAR(50), this, "");
 
     /**
-     * The column <code>public.owner.lastname</code>.
+     * The column <code>public.owner.last_name</code>.
      */
-    public final TableField<OwnerRecord, String> LASTNAME = createField(DSL.name("lastname"), SQLDataType.VARCHAR(50), this, "");
+    public final TableField<OwnerRecord, String> LAST_NAME = createField(DSL.name("last_name"), SQLDataType.VARCHAR(50), this, "");
 
     private Owner(Name alias, Table<OwnerRecord> aliased) {
         this(alias, aliased, null);
