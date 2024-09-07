@@ -17,4 +17,10 @@ public record OwnerWithCars(
             String registrationNumber,
             Double price) {
     }
+
+    public static OwnerWithCars create(Long ownerId,
+                                       String firstName,
+                                       String lastName) {
+        return new OwnerWithCars(ownerId, firstName, lastName, null);
+    }
 }

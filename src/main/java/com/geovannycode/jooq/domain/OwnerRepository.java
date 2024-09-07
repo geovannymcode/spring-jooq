@@ -54,4 +54,32 @@ public class OwnerRepository {
                 .fetchOptional()
                 .map(mapping(OwnerWithCars::new));
     }
+
+
+    public OwnerWithCars createOwner(OwnerWithCars owner) {
+        return dsl
+                .insertInto(OWNER, OWNER.FIRST_NAME, OWNER.LAST_NAME)
+                .values(owner.firstName(), owner.lastName())
+                .returning()
+                .fetchOne(record -> new OwnerWithCars(
+                        record.get(OWNER.OWNER_ID),
+                        record.get(OWNER.FIRST_NAME),
+                        record.get(OWNER.LAST_NAME),
+                        List.of()
+                ));
+    }
+
+    public void updateOwner(OwnerWithCars owner) {
+        dsl.update(OWNER)
+                .set(OWNER.FIRST_NAME, owner.firstName())
+                .set(OWNER.LAST_NAME, owner.lastName())
+                .where(OWNER.OWNER_ID.eq(owner.ownerId()))
+                .execute();
+    }
+
+    public void deleteOwner(Long id) {
+        dsl.deleteFrom(OWNER)
+                .where(OWNER.OWNER_ID.eq(id))
+                .execute();
+    }
 }

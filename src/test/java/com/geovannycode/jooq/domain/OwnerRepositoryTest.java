@@ -1,22 +1,10 @@
 package com.geovannycode.jooq.domain;
 
-import com.geovannycode.jooq.generated.tables.Owner;
+
 import org.jooq.DSLContext;
-import org.jooq.Field;
-import org.jooq.Record;
-import org.jooq.Record3;
-import org.jooq.RecordMapper;
-import org.jooq.Result;
-import org.jooq.ResultQuery;
-import org.jooq.SelectConditionStep;
-import org.jooq.SelectSelectStep;
-import org.jooq.SelectJoinStep;
-import org.jooq.SelectFieldOrAsterisk;
-import org.jooq.Table;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
-import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,22 +12,9 @@ import org.springframework.boot.test.autoconfigure.jooq.JooqTest;
 import org.springframework.context.annotation.Import;
 import org.springframework.test.context.jdbc.Sql;
 
-import java.math.BigDecimal;
 import java.util.List;
 import java.util.Optional;
-
-import static com.geovannycode.jooq.generated.tables.Car.CAR;
-import static com.geovannycode.jooq.generated.tables.Owner.OWNER;
-
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNotNull;
-import static org.junit.jupiter.api.Assertions.assertTrue;
-import static org.mockito.ArgumentMatchers.any;
-import static org.mockito.ArgumentMatchers.anyString;
-
-import static org.mockito.ArgumentMatchers.eq;
-import static org.mockito.Mockito.mock;
-import static org.mockito.Mockito.when;
+import java.util.UUID;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -80,6 +55,44 @@ public class OwnerRepositoryTest {
         var car2 = new OwnerWithCars.Car(3L, "Honda", "Blue", "Civic", 2019, "XYZ789", 18000.0);
 
         assertThat(owner.cars()).contains(car1, car2);
+    }
+
+    @Test
+    void createOwner() {
+        OwnerWithCars owner = new OwnerWithCars(null, "Manuel", "Gonzalez", List.of());
+
+        OwnerWithCars savedOwner = ownerRepository.createOwner(owner);
+        assertThat(savedOwner.ownerId()).isNotNull();
+        assertThat(savedOwner.firstName()).isEqualTo("Manuel");
+        assertThat(savedOwner.lastName()).isEqualTo("Gonzalez");
+    }
+
+    @Test
+    void updateOwner() {
+        OwnerWithCars owner = createTestOwner();
+        OwnerWithCars updateOwner = new OwnerWithCars(owner.ownerId(), "TestName1", owner.lastName(), List.of());
+        ownerRepository.updateOwner(updateOwner);
+
+        OwnerWithCars updatedOwner = ownerRepository.findOwnerById(updateOwner.ownerId()).orElseThrow();
+
+        assertThat(updatedOwner.ownerId()).isEqualTo(updatedOwner.ownerId());
+        assertThat(updatedOwner.firstName()).isEqualTo("TestName1");
+        assertThat(updatedOwner.lastName()).isEqualTo(owner.lastName());
+    }
+
+    @Test
+    void deleteUser() {
+        OwnerWithCars owner = createTestOwner();
+        ownerRepository.deleteOwner(owner.ownerId());
+
+        Optional<OwnerWithCars> optionalOwner = ownerRepository.findOwnerById(owner.ownerId());
+        assertThat(optionalOwner).isEmpty();
+    }
+
+    private OwnerWithCars createTestOwner() {
+        String uuid = UUID.randomUUID().toString();
+        OwnerWithCars owner = new OwnerWithCars(null, uuid, uuid+"1", List.of());
+        return ownerRepository.createOwner(owner);
     }
 
 }
